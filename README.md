@@ -13,7 +13,7 @@ The design can be viewed here: [Figma Design Link](https://www.figma.com/design/
 ## **Technology Stack**
 
 - **Vite**
-- **React**
+- **React/Typescript**
 - **Tailwind CSS**
 
 ---
