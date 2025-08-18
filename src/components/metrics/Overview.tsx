@@ -22,7 +22,7 @@ const Overview: React.FC<OverviewProps> = ({
   iconSrc,
 }) => {
   return (
-    <div className="max-w-2xl rounded-2xl border border-gray-100 bg-white shadow-sm">
+    <div className="max-w-2xl max-h-[180px] rounded-2xl border border-gray-100 bg-white outline-1 outline-gray-300">
       <div className="mb-4 flex items-center justify-between border-b-1 border-gray-200 bg-[#f9fafb] p-3">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl">
@@ -61,7 +61,7 @@ const Overview: React.FC<OverviewProps> = ({
         </div>
 
         <div className="text-center">
-          <p className="font-mediumtext-[14px] mb-2 text-gray-500">{kpi3}</p>
+          <p className="mb-2 text-[14px] font-medium text-gray-500">{kpi3}</p>
           <p className="text-2xl font-semibold">{kpi3Value}</p>
         </div>
       </div>

@@ -137,7 +137,7 @@ const Calendar = ({ isVisible, onClose }: CalendarProps) => {
                 className={`relative flex h-16 w-full cursor-pointer justify-start border-r border-b border-gray-700 p-1.5 text-[10px] font-medium transition-colors last:border-r-0 hover:bg-gray-800 ${!date.isCurrentMonth ? "text-gray-600" : "text-[#969696]"} `}
               >
                 <span
-                  className={` ${isSelected ? "rounded-full bg-blue-600 px-1 py-1 text-xs text-white" : ""} `}
+                  className={`flex h-6 w-6 items-center justify-center rounded-full text-xs transition-colors ${isSelected ? "bg-blue-600 text-white" : ""}`}
                 >
                   {date.day}
                 </span>

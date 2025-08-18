@@ -6,7 +6,7 @@ import chatbot from "@/assets/icons/chatbot.svg";
 
 const ImageRoll = () => {
   return (
-    <div className="relative flex gap-4 justify-around container mx-auto px-4 font-euclid-circular-b mb-8">
+    <div className="font-euclid-circular-b relative container mx-auto mb-8 flex max-w-[1400px] justify-around gap-4 px-4">
       <ImageFrame
         imgSrc={listing1}
         title="MOST CLICKED"
@@ -28,7 +28,7 @@ const ImageRoll = () => {
         circleCount={5}
       />
 
-      <div className="absolute bg-[#242526] rounded-full p-5 right-3 top-5">
+      <div className="absolute top-5 right-3 rounded-full bg-[#242526] p-5">
         <img src={chatbot} alt="" className="" />
       </div>
     </div>

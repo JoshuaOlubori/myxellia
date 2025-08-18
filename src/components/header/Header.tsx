@@ -44,7 +44,7 @@ const Header = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative max-w-[1350px] container mx-auto">
       <header className="font-euclid-circular-b container mx-auto bg-white text-gray-800">
         <div className="container flex items-center justify-between border-b border-zinc-200 bg-[#191919] p-4.5 px-10 text-white">
           <HeaderLogo />

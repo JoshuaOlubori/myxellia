@@ -24,9 +24,9 @@ import downIndicator2 from "@/assets/icons/metrics/down-indicator-2.svg";
 export default function StatCard ({index, title, value, percentage, isUp, color}: StatCardProps)  {
     return (
       <div
-        className={`${index === 1 ? "mr-4 mb-4" : index === 2 ? "mb-4" : index === 3 ? "mr-4" : ""} inline-block w-full rounded-xl border border-gray-300 bg-white p-6 transition-shadow hover:shadow-md sm:w-[calc(50%-10px)]`}
+        className={`${index === 1 ? "mr-4 mb-4" : index === 2 ? "mb-4" : index === 3 ? "mr-4" : ""} inline-block w-full rounded-xl border border-gray-200 bg-white p-6 transition-shadow hover:shadow-md sm:w-[calc(50%-10px)]`}
       >
-        <h4 className={`mb-2 text-2xl font-bold ${colorClasses[color]}`}>
+        <h4 className={`mb-2 text-xl font-bold ${colorClasses[color]}`}>
           {value}
         </h4>
         <div className="flex items-center gap-1">
