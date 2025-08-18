@@ -1,10 +1,15 @@
 import{ useState } from 'react';
-import { ChevronLeft, ChevronRight, ArrowLeft, X } from 'lucide-react';
+import {  ArrowLeft, X } from 'lucide-react';
+import ChevronLeft from '@/assets/icons/calendar/arrow-left.svg'
+import ChevronRight from '@/assets/icons/calendar/arrow-right.svg'
 
+interface CalendarProps {
+  isVisible: boolean;
+  onClose: () => void;
+}
 
-
-const Calendar = ({ isVisible, onClose }) => {
-  const [currentDate, setCurrentDate] = useState(new Date(2023, 10, 16));
+const Calendar = ({ isVisible, onClose }: CalendarProps) => {
+  const [currentDate, setCurrentDate] = useState<Date>(new Date(2023, 10, 16));
   
   const monthNames = [
     "January", "February", "March", "April", "May", "June",
@@ -13,7 +18,7 @@ const Calendar = ({ isVisible, onClose }) => {
   
   const dayNames = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
   
-  const getDaysInMonth = (date) => {
+  const getDaysInMonth = (date: Date) => {
     const year = date.getFullYear();
     const month = date.getMonth();
     const firstDay = new Date(year, month, 1);
@@ -56,7 +61,7 @@ const Calendar = ({ isVisible, onClose }) => {
     return days;
   };
   
-  const navigateMonth = (direction) => {
+  const navigateMonth = (direction: number) => {
     setCurrentDate(prev => {
       const newDate = new Date(prev);
       newDate.setMonth(prev.getMonth() + direction);
@@ -84,12 +89,13 @@ const Calendar = ({ isVisible, onClose }) => {
           </button>
         </div>
         
-        <div className="flex items-center justify-between p-4">
+        <div className="flex items-center justify-around  px-3 py-4.5">
           <button 
             onClick={() => navigateMonth(-1)}
             className="p-1 hover:bg-gray-800 rounded"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <img src={ChevronLeft} alt="Left chevron icon" />
+            {/* <ChevronLeft className="w-5 h-5" /> */}
           </button>
           <h2 className="text-[16px] font-semibold">
             {monthNames[currentDate.getMonth()]} {currentDate.getFullYear()}
@@ -98,19 +104,19 @@ const Calendar = ({ isVisible, onClose }) => {
             onClick={() => navigateMonth(1)}
             className="p-1 hover:bg-gray-800 rounded"
           >
-            <ChevronRight className="w-5 h-5" />
+           <img src={ChevronRight} alt="Right chevron icon" />
           </button>
         </div>
         
-        <div className="grid grid-cols-7 border-t border-gray-700">
+        <div className="font-inter grid grid-cols-7 py-1 border-t  border-r border-b border-gray-700 last:border-r-0 ">
           {dayNames.map((day) => (
-            <div key={day} className="text-center text-xs text-gray-400 py-3 font-medium border-r border-gray-700 last:border-r-0">
+            <div key={day} className="text-center text-[7.58px] text-gray-400  font-medium border-r border-gray-700 last:border-r-0">
               {day}
             </div>
           ))}
         </div>
         
-        <div className="grid grid-cols-7">
+        <div className="font-inter grid grid-cols-7">
           {days.map((date, index) => {
             const isSelected = date.isCurrentMonth && date.day === selectedDay;
             
@@ -118,14 +124,14 @@ const Calendar = ({ isVisible, onClose }) => {
               <div
                 key={index}
                 className={`
-                  relative h-16 w-full flex items-center justify-center text-sm
+                  relative h-16 w-full flex p-1.5 justify-start text-[10px] font-medium
                   border-r border-b border-gray-700 last:border-r-0
                   hover:bg-gray-800 transition-colors cursor-pointer
-                  ${!date.isCurrentMonth ? 'text-gray-600' : 'text-white'}
+                  ${!date.isCurrentMonth ? 'text-gray-600' : 'text-[#969696]'}
                 `}
               >
                 <span className={`
-                  ${isSelected ? 'bg-blue-600 text-white px-2 py-1 rounded-full text-xs' : ''}
+                  ${isSelected ? 'bg-blue-600 text-white px-1 py-1 rounded-full text-xs' : ''}
                 `}>
                   {date.day}
                 </span>

@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap');
 @import "tailwindcss";
 
 @font-face {
@@ -93,10 +93,14 @@
 @theme {
   --font-arp-150: "Arp-150", san-serif; 
  --font-euclid-circular-b: "EuclidCircularB", sans-serif;
+ --font-inter: "Inter", sans-serif; 
+
 }
 
 @utility container {
-max-width: 1760px;
+max-width: 1760px;    
+}
 
-    
+@utility modal-overlay {
+  background-color: hsla(0, 0%, 0%, 0.4);
 }
