@@ -23,64 +23,55 @@ const BudgetCalculatorModal = ({
 
   return (
     <div
-      className="fixed inset-0 modal-overlay z-50 flex items-center justify-center font-euclid-circular-b"
+      className="modal-overlay font-euclid-circular-b fixed inset-0 z-50 flex items-center justify-center"
       onClick={handleOverlayClick}
     >
-      {/* This is the main container for the modal content.
-        Added 'bg-white' to give it a solid white background.
-      */}
-      <div className="rounded-xl max-w-md w-full mx-auto overflow-hidden bg-white"> 
-        {/* Header Section with Calculator Icon */}
-        <div className="pt-[26px] px-[26px] bg-[#0c2841]">
+      <div className="mx-auto w-full max-w-md overflow-hidden rounded-xl bg-white">
+        <div className="bg-[#0c2841] px-[26px] pt-[26px]">
           <img className="object-cover" src={overlay} alt="overlay svg" />
         </div>
-        
-        {/* Content Section */}
-        <div className="px-8 py-8 space-y-8">
-          {/* Features List */}
+
+        <div className="space-y-8 px-8 py-8">
           <div className="space-y-4">
-            {/* Feature 1 */}
             <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0 mt-1">
+              <div className="mt-1 flex-shrink-0">
                 <img src={settings} alt="settings icon" />
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900 mb-1">
+                <h3 className="mb-1 font-semibold text-gray-900">
                   Set up annual budgets by account category
                 </h3>
-                <p className="text-xs text-gray-600 leading-relaxed">
+                <p className="text-xs leading-relaxed text-gray-600">
                   Allocate funds across income and expense lines with full
                   visibility.
                 </p>
               </div>
             </div>
 
-            {/* Feature 2 */}
             <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0 mt-1">
+              <div className="mt-1 flex-shrink-0">
                 <img src={trend} alt="trends icon" />
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900 mb-1">
+                <h3 className="mb-1 font-semibold text-gray-900">
                   Track actuals vs budget in real time
                 </h3>
-                <p className="text-xs text-gray-600 leading-relaxed">
+                <p className="text-xs leading-relaxed text-gray-600">
                   See how your community is performing against plan, month by
                   month.
                 </p>
               </div>
             </div>
 
-            {/* Feature 3 */}
             <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0 mt-1">
+              <div className="mt-1 flex-shrink-0">
                 <img src={barChart} alt="chart icon" />
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900 mb-1">
+                <h3 className="mb-1 font-semibold text-gray-900">
                   Adjust figures and forecast with ease
                 </h3>
-                <p className="text-xs text-gray-600 leading-relaxed">
+                <p className="text-xs leading-relaxed text-gray-600">
                   Edit amounts, apply percentage changes, or roll forward last
                   year's data—all in one place.
                 </p>
@@ -88,8 +79,7 @@ const BudgetCalculatorModal = ({
             </div>
           </div>
 
-          {/* Create Budget Button */}
-          <button className="w-full bg-[#18181B] text-white py-4 px-6 rounded-full font-medium hover:bg-gray-800 transition-colors duration-200">
+          <button className="w-full rounded-full bg-[#18181B] px-6 py-4 font-medium text-white transition-colors duration-200 hover:bg-gray-800">
             Create Budget
           </button>
         </div>
