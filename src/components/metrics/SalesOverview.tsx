@@ -89,7 +89,7 @@ const SalesOverview = () => {
             size: 12,
           },
           stepSize: 10,
-          callback: function (value) {
+          callback: function (value: string | number){
             return value + "m";
           },
         },
