@@ -27,9 +27,7 @@ export default function ResponsiveWarning() {
             Screen Size Warning
           </DialogTitle>
           <DialogDescription className="text-sm leading-normal sm:text-base">
-            This project's design is based exclusively on a desktop Figma
-            mockup. For the best viewing experience, please open this project on
-            a screen with a width of 1200px or greater.
+            For the best viewing experience, please open this project on a screen with a width of 1200px or greater, as the mobile and tablet view has not been implemented yet.
           </DialogDescription>
         </DialogHeader>
         <div className="mt-4 flex justify-end">
